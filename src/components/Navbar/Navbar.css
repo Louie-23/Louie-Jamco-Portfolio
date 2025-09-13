@@ -1,0 +1,110 @@
+/* Navbar wrapper */
+.navbar-wrapper {
+  position: sticky;
+  top: 0; /* stick at top */
+  z-index: 10;
+}
+
+/* Navbar styling */
+.custom-navbar {
+  background: linear-gradient(to bottom, #2C2C2C, #000000);
+  padding: 10px 40px;
+  border-bottom: 4px solid;
+  border-image: linear-gradient(to right, #ff0000, #00ffcc, #0066ff) 1;
+  min-height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* space out children */
+}
+
+/* Nav links container */
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+}
+
+/* Nav link styles */
+.custom-navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.custom-navbar a:hover {
+  color: #2ecc71;
+}
+
+.custom-navbar a.active {
+  color: #2ecc71;
+  font-weight: 600;
+  border-bottom: 2px solid #2ecc71;
+}
+
+/* Hamburger menu (hidden by default) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: 0.3s;
+}
+
+/* Hamburger animation when open */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile menu styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    margin-left: auto; /* stays on right */
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #111;
+    flex-direction: column;
+    width: 120px;
+    padding: 0 20px; /* adjust padding so height can animate */
+    border-left: 2px solid #2ecc71;
+    z-index: 1000;
+
+    /* for animation */
+    max-height: 0;         /* start closed */
+    overflow: hidden;      /* hide content when collapsed */
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  .nav-links.show {
+    max-height: 500px; /* big enough to fit all links */
+    padding: 20px;     /* restore padding when opened */
+  }
+
+  .nav-links li {
+    margin: 1px 10;
+  }
+}
+

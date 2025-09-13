@@ -1,0 +1,153 @@
+/* ==============================
+   Container & Layout
+============================== */
+.about-container {
+  position: relative;
+  min-height: 100vh;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  overflow: hidden;
+  z-index: 0;
+  background-color: #000;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.left,
+.middle,
+.right {
+  flex: 1;
+  min-width: 250px;
+  color: #ddd;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ==============================
+   Title
+============================== */
+.about-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color:#2ecc71;
+  letter-spacing: 2px;
+  z-index: 1;
+}
+
+/* ==============================
+   Text & Headings
+============================== */
+.left p,
+.middle p,
+.right p {
+  margin: 6px 0;
+}
+
+.left strong,
+.middle strong,
+.right strong {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.left ul,
+.middle ul,
+.right ul {
+  margin: 8px 0 16px;
+  padding-left: 20px;
+}
+
+.left li,
+.middle li,
+.right li {
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+/* Section headings inside columns */
+.left p:first-of-type,
+.left p:nth-of-type(3),
+.left p:nth-of-type(5),
+.middle p:first-of-type,
+.middle p:nth-of-type(2),
+.middle p:nth-of-type(3),
+.middle p:nth-of-type(4),
+.right p:first-of-type,
+.right p:nth-of-type(2),
+.right p:nth-of-type(3),
+.right p:nth-of-type(4),
+.right p:nth-of-type(5) {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 12px;
+  color: #fff;
+}
+
+/* ==============================
+   Skills Grid
+============================== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px 5px;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  margin-right: 8px; /* adds space between icon and text */
+}
+
+.skills-grid li {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 5px;
+  border-radius: 6px;
+  font-size: 13px;
+  display: flex;
+  align-items: center; /* vertically center */
+  justify-content: flex-start; /* align text + icon to left */
+  gap: 6px; /* spacing between icon and text */
+}
+
+/* ==============================
+   Image Centering
+============================== */
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.left img {
+  width: 180px;
+  border-radius: 25px;
+  margin: 0 auto;
+  display: block;
+  border: 0.1px solid #2ecc71;
+}
+
+/* ==============================
+   Responsive
+============================== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+}

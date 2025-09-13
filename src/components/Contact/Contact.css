@@ -1,0 +1,110 @@
+/* Contact Section */
+.contact-container {
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Title */
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+  color: #2ecc71; 
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Form Layout */
+.contact-form {
+  max-width: 600px;
+  margin: auto;
+  background: rgba(20, 20, 20, 0.85); /* subtle dark card */
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Two-column row for Name + Email */
+.contact-row {
+  display: flex;
+  gap: 15px;
+}
+
+.contact-row .field {
+  flex: 1;
+}
+
+/* Labels */
+.contact-form label {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  color: #bbb;
+  text-align: left;
+}
+
+/* Inputs + Textarea */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #111;
+  color: #fff;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #2ecc71;
+  box-shadow: 0 0 8px rgba(59, 255, 0, 0.5);
+}
+
+/* Button */
+.contact-form button {
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  background: #2ecc71;
+  color: #111;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+.contact-form button:hover {
+  background: #3bff00;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(46, 204, 113, 0.4);
+}
+
+/* Status message */
+.status {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 1rem;
+  opacity: 1;
+  transition: opacity 2s ease;
+}
+
+.status.fade-out {
+  opacity: 0;
+}
+
+/* Success and Error colors */
+.status.success {
+  color: #2ecc71;
+}
+
+.status.error {
+  color: #ff4d4d;
+}
