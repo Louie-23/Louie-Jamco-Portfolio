@@ -24,77 +24,77 @@ export const projects: Project[] = [
       id: 2,
       category: "Prototypes",
       title: "IoT Real-Time Water Quality Monitoring",
-      image: "/PrototypeB/PrototypeB.png",
+      image: "PrototypeB/PrototypeB.png",
       description:
         "An IoT-based real-time water quality monitoring system using ESP32, integrated with Blynk IoT for enhanced monitoring and remote access. The prototype utilizes Temperature, Total Dissolved Solids (TDS), Turbidity, and pH sensors to provide accurate water condition data, helping ensure safer and more reliable water usage.",
-      images: ["/PrototypeB/PrototypeB.png", "/PrototypeB/PrototypeB2.png", "/PrototypeB/PrototypeB3.png","/PrototypeB/PrototypeB6.jpg"], 
-      videos: ["/PrototypeB/PrototypeB4.mp4", "/PrototypeB/PrototypeB5.mp4"],
+      images: ["PrototypeB/PrototypeB.png", "PrototypeB/PrototypeB2.png", "PrototypeB/PrototypeB3.png","PrototypeB/PrototypeB6.jpg"], 
+      videos: ["PrototypeB/PrototypeB4.mp4", "PrototypeB/PrototypeB5.mp4"],
       link:"https://github.com/Louie-23/IoT-Water-Quality-Monitor-using-ESP32.git"
       },
     {
       id: 3,
       category: "Prototypes",
       title: "Roadside Air Pollution Detection and Display System",
-      image: "/PrototypeC/PrototypeC.jpg",
+      image: "PrototypeC/PrototypeC.jpg",
       description:
         "A roadside air pollution detection and display system powered by Arduino and a 12864 LCD. The prototype integrates Particulate Matter (PM), Carbon Monoxide (CO), Carbon Dioxide (CO₂), and Total Volatile Organic Compounds (TVOC) sensors to provide real-time air quality data. Designed to raise public awareness and promote healthier environments through accessible roadside monitoring.",
-      images: ["/PrototypeC/PrototypeC.jpg", "/PrototypeC/PrototypeC2.jpg", "/PrototypeC/PrototypeC3.png", "/PrototypeC/PrototypeC5.png"], 
-      videos: ["/PrototypeC/PrototypeC4.mp4"],
+      images: ["PrototypeC/PrototypeC.jpg", "PrototypeC/PrototypeC2.jpg", "PrototypeC/PrototypeC3.png", "PrototypeC/PrototypeC5.png"], 
+      videos: ["PrototypeC/PrototypeC4.mp4"],
       link:"https://github.com/Louie-23/Roadside-Air-Pollution-Detection-using-Arduino-and-12864-LCD.git"
     },
     {
       id: 4,
       category: "Prototypes",
       title: "Automatic Obstacle Avoidance Car with Manual IR Remote Control",
-      image: "/PrototypeD/PrototypeD.jpg",
+      image: "PrototypeD/PrototypeD.jpg",
       description:
         "An Arduino-powered obstacle avoidance car that combines autonomous navigation with manual control via IR remote. Equipped with a motor shield and ultrasonic sensor, the system automatically detects and avoids obstacles while also allowing users to switch to manual driving, providing both safety and flexibility. This project demonstrates practical robotics applications in smart vehicles and automation.",
-      images: ["/PrototypeD/PrototypeD.jpg", "/PrototypeD/PrototypeD2.png", "/PrototypeD/PrototypeD3.png"], 
-      videos: ["/PrototypeD/PrototypeD4.mp4","/PrototypeD/PrototypeD5.mp4","/PrototypeD/PrototypeD6.mp4"],
+      images: ["PrototypeD/PrototypeD.jpg", "PrototypeD/PrototypeD2.png", "PrototypeD/PrototypeD3.png"], 
+      videos: ["PrototypeD/PrototypeD4.mp4","PrototypeD/PrototypeD5.mp4","PrototypeD/PrototypeD6.mp4"],
       link:"https://github.com/Louie-23/Automatic-Obstacle-Avoidance-Car-with-Manual-IR-Remote-Control-using-Arduino.git" 
     },
     {
       id: 5,
       category: "Software",
       title: "Barangay Inventory Management System",
-      image: "/SoftwareA/SoftwareA.png",
+      image: "SoftwareA/SoftwareA.png",
       description:
         "A Barangay Inventory Management System Software developed in Visual Studio using C# and Microsoft SQL Server. The system features a user-friendly GUI and integrated database to efficiently manage records and track supplies in barangay operations.",
-      images: [ "/SoftwareA/SoftwareA2.png","/SoftwareA/SoftwareA3.png","/SoftwareA/SoftwareA4.png","/SoftwareA/SoftwareA12.png","/SoftwareA/SoftwareA5.png","/SoftwareA/SoftwareA6.png","/SoftwareA/SoftwareA7.png","/SoftwareA/SoftwareA8.png","/SoftwareA/SoftwareA9.png"], 
-      videos: ["/SoftwareA/SoftwareA10.mp4","/SoftwareA/SoftwareA11.mp4"],
+      images: [ "SoftwareA/SoftwareA2.png","SoftwareA/SoftwareA3.png","SoftwareA/SoftwareA4.png","SoftwareA/SoftwareA12.png","SoftwareA/SoftwareA5.png","SoftwareA/SoftwareA6.png","SoftwareA/SoftwareA7.png","SoftwareA/SoftwareA8.png","SoftwareA/SoftwareA9.png"], 
+      videos: ["SoftwareA/SoftwareA10.mp4","SoftwareA/SoftwareA11.mp4"],
       link:"https://github.com/Louie-23/Barangay-Inventory-Management-System-using-C--and-MicrosoftSQL.git"
     },
     {
       id: 6,
       category: "Software",
       title: "Information and Public Affairs Services Website",
-      image: "/SoftwareB/SoftwareB.png",
+      image: "SoftwareB/SoftwareB.png",
       description:
         "A web-based system developed in Visual Studio Code using HTML, Bootstrap, JavaScript, and React.js for the frontend, and PHP with MySQL for the backend. The system runs on XAMPP with phpMyAdmin for database management It highlights the implementation of Create, Read, Update, and Delete (CRUD) operations, demonstrating the concept and functionality of managing records through a modern web interface. (Work in progress)",
-      images: ["/SoftwareB/SoftwareB.png","/SoftwareB/SoftwareB2.png","/SoftwareB/SoftwareB3.png","/SoftwareB/SoftwareB4.png","/SoftwareB/SoftwareB5.png"], 
-      videos: ["/SoftwareB/SoftwareB6.mp4"],
+      images: ["SoftwareB/SoftwareB.png","SoftwareB/SoftwareB2.png","SoftwareB/SoftwareB3.png","SoftwareB/SoftwareB4.png","SoftwareB/SoftwareB5.png"], 
+      videos: ["SoftwareB/SoftwareB6.mp4"],
       link:""
     },
     {
       id: 7,
       category: "Software",
       title: "CPU Scheduling System (Shortest Remaining Time First) Calculator using C++",
-      image: "/SoftwareC/SoftwareC.png",
+      image: "SoftwareC/SoftwareC.png",
       description:
         "A CPU Scheduling System (Shortest Remaining Time First) Calculator developed in Dev-C++ using the C++ programming language. The project simulates process scheduling to calculate waiting time, turnaround time, and completion time, providing a practical demonstration of operating system concepts in process management.",
-      images: ["/SoftwareC/SoftwareC.png", "/SoftwareC/SoftwareC2.png","/SoftwareC/SoftwareC3.png"], 
-      videos: ["/SoftwareC/SoftwareC4.mp4"],
+      images: ["SoftwareC/SoftwareC.png", "SoftwareC/SoftwareC2.png","SoftwareC/SoftwareC3.png"], 
+      videos: ["SoftwareC/SoftwareC4.mp4"],
       link:"https://github.com/Louie-23/CPU-Scheduling-Shortest-Remaining-Time-First-Calculator-using-C--.git"
     },
     {
       id: 8,
       category: "Software",
       title: " Development of C# game (Flappy Bird style)",
-      image: "/SoftwareD/SoftwareD.png",
+      image: "SoftwareD/SoftwareD.png",
       description:
         "A work-in-progress Flappy Bird–style game developed in Unity and Visual Studio Code using C#. The project is inspired by YouTube tutorials and self-study, serving as a learning experience in game development, physics-based mechanics, and interactive design.",
-      images: ["/SoftwareD/SoftwareD2.png", "/SoftwareD/SoftwareD.png","/SoftwareD/SoftwareD3.png","/SoftwareD/SoftwareD4.png"], 
-      videos: ["/SoftwareD/SoftwareD5.mp4"],
+      images: ["SoftwareD/SoftwareD2.png", "SoftwareD/SoftwareD.png","SoftwareD/SoftwareD3.png","SoftwareD/SoftwareD4.png"], 
+      videos: ["SoftwareD/SoftwareD5.mp4"],
       link:""
       },
   ];
