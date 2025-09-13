@@ -82,6 +82,7 @@
 
 /* Section headings inside columns */
 .left p:first-of-type,
+.left p:nth-of-type(2),
 .left p:nth-of-type(3),
 .left p:nth-of-type(5),
 .middle p:first-of-type,
