@@ -27,8 +27,8 @@ export const projects: Project[] = [
       image: "PrototypeB/PrototypeB.webp",
       description:
         "An IoT-based real-time water quality monitoring system using ESP32, integrated with Blynk IoT for enhanced monitoring and remote access. The prototype utilizes Temperature, Total Dissolved Solids (TDS), Turbidity, and pH sensors to provide accurate water condition data, helping ensure safer and more reliable water usage.",
-      images: ["PrototypeB/PrototypeB.webp", "PrototypeB/PrototypeB2.webp", "PrototypeB/PrototypeB3.webp","PrototypeB/PrototypeB6.webp"], 
-      videos: ["PrototypeB/PrototypeB4.mp4", "PrototypeB/PrototypeB5.mp4"],
+      images: ["PrototypeB/PrototypeB.webp", "PrototypeB/PrototypeB2.webp", "PrototypeB/PrototypeB3.webp","PrototypeB/PrototypeB4.webp"], 
+      videos: ["PrototypeB/PrototypeB5.mp4", "PrototypeB/PrototypeB6.mp4"],
       link:"https://github.com/Louie-23/IoT-Water-Quality-Monitor-using-ESP32.git"
       },
     {
