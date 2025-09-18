@@ -70,7 +70,7 @@ export const projects: Project[] = [
       title: "Information and Public Affairs Services Website",
       image: "SoftwareB/SoftwareB.webp",
       description:
-        "A web-based system developed in Visual Studio Code using HTML, Bootstrap, JavaScript, and React.js for the frontend, and PHP with MySQL for the backend. The system runs on XAMPP with phpMyAdmin for database management It highlights the implementation of Create, Read, Update, and Delete (CRUD) operations, demonstrating the concept and functionality of managing records through a modern web interface. (Work in progress)",
+        "A web-based system developed in Visual Studio Code using HTML, Bootstrap, JavaScript, and React.js for the frontend, and PHP with MySQL for the backend. The system is hosted on XAMPP with phpMyAdmin for database management. It features a RESTful API implementation that enables Create, Read, Update, and Delete (CRUD) operations, showcasing how data can be efficiently managed and interacted with through a modern web interface. (Work in progress)",
       images: ["SoftwareB/SoftwareB.webp","SoftwareB/SoftwareB2.webp","SoftwareB/SoftwareB3.webp","SoftwareB/SoftwareB4.webp","SoftwareB/SoftwareB5.webp"], 
       videos: ["SoftwareB/SoftwareB6.mp4"],
       link:""
