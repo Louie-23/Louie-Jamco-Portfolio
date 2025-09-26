@@ -23,15 +23,15 @@ export default function Home() {
       </div>
 
       <div className="home-content">
-        <h1 className="custom-title">
+        <h1 className="custom-title slide-right">
           Hello! I'm <span className="green-name">Mark Louie Jamco</span>
           <br />Graduate in Bachelor of Science in
           <br />Computer Engineering
         </h1>
 
-        <button className="custom-btn" onClick={scrolltoabout}>Know Me ↓</button>
+        <button className="custom-btn slide-left" onClick={scrolltoabout}>Know Me ↓</button>
 
-        <div className="button-row">
+        <div className="button-row slide-left">
           <button
             className="cv-btn"
             onClick={() =>

@@ -289,3 +289,37 @@
   background: #444;
   color: #fff;
 }
+
+
+/* Title slides from right */
+.slide-right {
+  opacity: 0;
+  transform: translateX(50px);
+}
+.slide-right.animate-on-scroll {
+  animation: slideRightAnim 1s forwards;
+}
+
+@keyframes slideRightAnim {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Project cards slide from bottom */
+.slide-up {
+  opacity: 0;
+  transform: translateY(50px);
+}
+.slide-up.animate {
+  animation: slideUpAnim 1s forwards;
+}
+
+@keyframes slideUpAnim {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

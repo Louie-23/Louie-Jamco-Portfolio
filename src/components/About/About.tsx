@@ -1,17 +1,36 @@
+import { useRef, useState, useEffect } from "react";
 import './About.css';
 import image from '/src/assets/JAMCO.png';
 import StaticBackground from '../StaticBackground';
 
 export default function About() {
+  const [isVisible, setIsVisible] = useState(false);
+  const aboutRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true); // trigger animation once
+          observer.disconnect(); // stop observing after first trigger
+        }
+      },
+      { threshold: 0.3 } // 30% visible triggers animation
+    );
+
+    if (aboutRef.current) observer.observe(aboutRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="about" className="about-container">
+    <section id="about" ref={aboutRef} className="about-container">
       <StaticBackground />
 
-      <h2 className="about-title">ABOUT</h2>
+      <h2 className={`about-title slide-right ${isVisible ? 'animate' : ''}`}>ABOUT</h2>
 
       <div className="container">
-        {/* LEFT COLUMN */}
-        <div className="left">
+        <div className={`left slide-up ${isVisible ? 'animate' : ''}`} style={{ animationDelay: "0.3s" }}>
           <div className="centered">
             <img src={image} alt="Mark Louie Jamco" />
             <p><strong>Mark Louie Jamco</strong></p>
@@ -34,17 +53,12 @@ export default function About() {
             <li>Cum Laude (1 of 2 Latin Honors in College of Engineering)</li>
             <li>Special Opportunity Program Graduate: Arduino Programming</li>
             <li>TESDA NCII Computer Systems Servicing Passer</li>
-            <li>
-              2 Consecutive Year Top Student Performer Awardee
-              (2nd Year and 3rd Year College)
-            </li>
+            <li>2 Consecutive Year Top Student Performer Awardee (2nd & 3rd Year)</li>
           </ul>
         </div>
 
-        {/* MIDDLE COLUMN */}
-        <div className="middle">
+        <div className={`middle slide-up ${isVisible ? 'animate' : ''}`} style={{ animationDelay: "0.6s" }}>
           <p>EXPERIENCE</p>
-
           <p>Special Opportunity Program - Arduino Programming (Jan 2025 - Jun 2025)</p>
           <ul>
             <li>Developed various prototype projects integrating sensors, motors, and other components</li>
@@ -66,9 +80,8 @@ export default function About() {
           </ul>
         </div>
 
-{/* RIGHT COLUMN */}
-<div className="right">
-  <p>SKILLS AND TOOLS EXPERIENCED</p>
+        <div className={`right slide-up ${isVisible ? 'animate' : ''}`} style={{ animationDelay: "0.9s" }}>
+          <p>SKILLS AND TOOLS EXPERIENCED</p>
 
   <p>Software Development</p>
   <ul className="skills-grid">
