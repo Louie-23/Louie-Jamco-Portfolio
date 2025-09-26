@@ -17,7 +17,7 @@ export const projects: Project[] = [
     image: "PrototypeA/PrototypeA.webp",
     description: "An IoT-based drone system designed for search and rescue operations, equipped with a thermal camera, microwave motion sensor, Pixhawk flight controller, Raspberry Pi 4, and GPS. The system uses OpenCV for thermal image processing and integrates with an offline web-based GUI (Python, HTML, CSS, JavaScript) to provide real-time monitoring and flexible control, enabling responders to detect survivors and navigate challenging environments more effectively while reducing the effort and risk of human engagement in Search and Rescue operations.",
     images: ["PrototypeA/PrototypeA.webp", "PrototypeA/PrototypeA2.webp", "PrototypeA/PrototypeA3.webp"],
-    videos: ["PrototypeA/PrototypeA4.mp4","/PrototypeA/PrototypeA5.mp4"],
+    videos: ["PrototypeA/PrototypeA4.mp4","PrototypeA/PrototypeA5.mp4"],
     link: ""
   },
   {
