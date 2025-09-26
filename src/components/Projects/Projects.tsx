@@ -38,7 +38,7 @@ export default function Projects() {
             <div className="projects-grid">
               {projects
                 .filter((p) => p.category === category)
-                .map((project, index) => {
+                .map((project) => {
                   const cardRef = useRef<HTMLDivElement | null>(null);
 
                   // Observe each card
