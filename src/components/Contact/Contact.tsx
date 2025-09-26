@@ -70,23 +70,23 @@ export default function Contact() {
           CONTACT ME
         </h2>
 
- {/* Name */}
-<div
-  className={`field slide-up ${isVisible ? "animate" : ""}`}
-  style={{ animationDelay: "0.3s" }}
->
-  <label htmlFor="name">Name</label>
-  <input type="text" name="name" id="name" required />
-</div>
+      {/* Name */}
+      <div
+        className={`field slide-up ${isVisible ? "animate" : ""}`}
+        style={{ animationDelay: "0.3s" }}
+      >
+        <label htmlFor="name">Name</label>
+        <input type="text" name="name" id="name" required />
+      </div>
 
-{/* Email */}
-<div
-  className={`field slide-up ${isVisible ? "animate" : ""}`}
-  style={{ animationDelay: "0.4s" }}
->
-  <label htmlFor="email">Email</label>
-  <input type="email" name="email" id="email" required />
-</div>
+      {/* Email */}
+      <div
+        className={`field slide-up ${isVisible ? "animate" : ""}`}
+        style={{ animationDelay: "0.4s" }}
+      >
+        <label htmlFor="email">Email</label>
+        <input type="email" name="email" id="email" required />
+      </div>
 
       {/* Subject */}
       <div
