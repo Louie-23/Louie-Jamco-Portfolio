@@ -59,7 +59,7 @@ export const projects: Project[] = [
       title: "Barangay Inventory Management System",
       image: "SoftwareA/SoftwareA.webp",
       description:
-        "A Barangay Inventory Management System Software developed in Visual Studio using C# and Microsoft SQL Server. The system features a user-friendly GUI and integrated database to efficiently manage records and track supplies in barangay operations.",
+        "Barangay Inventory Management System is a desktop application developed in C# (.NET Framework) with Microsoft SQL Server using Visual Studio. Designed to efficiently manage and track barangay inventory records through a user-friendly GUI and role-based access for administrators and staff.",
       images: [ "SoftwareA/SoftwareA2.webp","SoftwareA/SoftwareA3.webp","SoftwareA/SoftwareA4.webp","SoftwareA/SoftwareA12.webp","SoftwareA/SoftwareA5.webp","SoftwareA/SoftwareA6.webp","SoftwareA/SoftwareA7.webp","SoftwareA/SoftwareA8.webp","SoftwareA/SoftwareA9.webp"], 
       videos: ["SoftwareA/SoftwareA10.mp4","SoftwareA/SoftwareA11.mp4"],
       link:"https://github.com/Louie-23/Barangay-Inventory-Management-System-using-C--and-MicrosoftSQL.git"
