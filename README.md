@@ -1,69 +1,82 @@
-# React + TypeScript + Vite
+# Louie Jamco Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal portfolio website built to showcase my software projects, IoT prototypes, and technical work in one place.
 
-Currently, two official plugins are available:
+[Live Demo](https://Louie-23.github.io/Louie-Jamco-Portfolio/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## Expanding the ESLint configuration
+This portfolio presents a collection of projects ranging from web and desktop software to embedded systems and robotics prototypes. It was built with React, TypeScript, and Vite, then deployed through GitHub Pages.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Highlights
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Showcases both `Software` and `Prototype` projects
+- Displays project images, videos, and descriptions
+- Includes direct links to selected GitHub repositories
+- Built as a fast, modern single-page portfolio
+- Deployed and publicly accessible on GitHub Pages
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- React
+- TypeScript
+- Vite
+- Bootstrap
+- EmailJS
+- GitHub Pages
+
+## Featured Project Areas
+
+### Software Projects
+
+- Barangay Inventory Management System
+- Information and Public Affairs Services Website
+- CPU Scheduling System Calculator
+- C# Flappy Bird-style Game
+
+### Prototype Projects
+
+- IoT-Based Thermal Imaging Robot
+- IoT Real-Time Water Quality Monitoring
+- Roadside Air Pollution Detection System
+- Automatic Obstacle Avoidance Car
+
+## Live Website
+
+Visit the deployed portfolio here:
+
+**[https://Louie-23.github.io/Louie-Jamco-Portfolio/](https://Louie-23.github.io/Louie-Jamco-Portfolio/)**
+
+## Local Development
+
+Install dependencies:
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Start the development server:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+## Production Build
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+## Deployment
+
+This project is configured for deployment with `gh-pages`.
+
+```bash
+npm run deploy
+```
+
+## Repository Purpose
+
+This repository serves as the source code for my personal portfolio website and as a central place to present my technical work online.
