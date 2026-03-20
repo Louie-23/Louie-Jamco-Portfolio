@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import type { Project } from "../../data/projectsData";
 import Slider from "./Slider";
 
@@ -7,7 +8,7 @@ type Props = {
   onClose: () => void;
   onNext: () => void;
   onPrev: () => void;
-  onDotClick: (index: number) => void; 
+  onDotClick: (index: number) => void;
 };
 
 export default function ProjectModal({
@@ -16,43 +17,70 @@ export default function ProjectModal({
   onClose,
   onNext,
   onPrev,
-  onDotClick, 
+  onDotClick,
 }: Props) {
+  useEffect(() => {
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [onClose]);
+
   return (
-    <div className="modal-overlay">
-      <div className="modal-content">
-        <button onClick={onClose} className="modal-close">
-          ✕
+    <div className="modal-overlay" onClick={onClose}>
+      <div
+        className="modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="project-modal-title"
+        onClick={(event) => event.stopPropagation()}
+      >
+        <button
+          type="button"
+          onClick={onClose}
+          className="modal-close"
+          aria-label="Close project details"
+        >
+          ×
         </button>
 
-        {/* Pass onDotClick down to Slider */}
         <Slider
           project={project}
           currentIndex={currentIndex}
           onNext={onNext}
           onPrev={onPrev}
-          onDotClick={onDotClick} 
+          onDotClick={onDotClick}
         />
 
-        <h3 className="modal-title">{project.title}</h3>
+        <h3 id="project-modal-title" className="modal-title">
+          {project.title}
+        </h3>
         <p className="modal-description">{project.description}</p>
 
-       <div className="modal-footer">
-        {project.link && (
-          <a
-             href={project.link}
-             target="_blank"
-             rel="noopener noreferrer"
-             className="btn-primary"
-           >
-             Visit Project
+        <div className="modal-footer">
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              Visit Project
             </a>
           )}
-         <button className="btn-secondary" onClick={onClose}>
-           Close
-         </button>
+          <button type="button" className="btn-secondary" onClick={onClose}>
+            Close
+          </button>
         </div>
-
       </div>
     </div>
   );

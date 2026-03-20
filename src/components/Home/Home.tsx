@@ -1,16 +1,9 @@
-import './Home.css';
-import ParticlesBackground from '../ParticlesBackground';
+import "./Home.css";
+import ParticlesBackground from "../ParticlesBackground";
 
 export default function Home() {
-  const scrolltoabout = () => {
-    const section = document.getElementById("about");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-    const scrolltocontact = () => {
-    const section = document.getElementById("contact");
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
@@ -24,28 +17,35 @@ export default function Home() {
 
       <div className="home-content">
         <h1 className="custom-title slide-right">
-          Hello! I'm <span className="green-name">Mark Louie Jamco</span>
-          <br />Graduate in Bachelor of Science in
-          <br />Computer Engineering
+          Hello! I&apos;m <span className="green-name">Mark Louie Jamco</span>
+          <br />
+          Graduate in Bachelor of Science in
+          <br />
+          Computer Engineering
         </h1>
 
-        <button className="custom-btn slide-left" onClick={scrolltoabout}>Know Me ↓</button>
+        <button className="custom-btn slide-left" onClick={() => scrollToSection("about")}>
+          Know Me ↓
+        </button>
 
         <div className="button-row slide-left">
           <button
+            type="button"
             className="cv-btn"
             onClick={() =>
-            window.open(
-             "https://drive.google.com/drive/folders/1uL1MoYqcf_iJ-2OXK1FiQ3PdshMiR0Ce?usp=sharing",
-             "_blank"
-              )   
-             }
-              >
-               Download CV
-           </button>
-          <button className="contact-btn" onClick={scrolltocontact}>Contact Me</button>
+              window.open(
+                "https://drive.google.com/drive/folders/1uL1MoYqcf_iJ-2OXK1FiQ3PdshMiR0Ce?usp=sharing",
+                "_blank",
+                "noopener,noreferrer"
+              )
+            }
+          >
+            Download CV
+          </button>
+          <button type="button" className="contact-btn" onClick={() => scrollToSection("contact")}>
+            Contact Me
+          </button>
         </div>
-
       </div>
     </section>
   );

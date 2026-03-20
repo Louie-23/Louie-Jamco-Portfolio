@@ -1,7 +1,35 @@
-import { useRef, useState, useEffect } from "react";
-import './About.css';
-import image from '/src/assets/JAMCO.png';
-import StaticBackground from '../StaticBackground';
+import { useEffect, useRef, useState } from "react";
+import {
+  FaAtom,
+  FaBootstrap,
+  FaCode,
+  FaCodeBranch,
+  FaCss3Alt,
+  FaCube,
+  FaFigma,
+  FaGithub,
+  FaHtml5,
+  FaJs,
+  FaMicrochip,
+  FaMicrosoft,
+  FaNodeJs,
+  FaPenNib,
+  FaPython,
+  FaRaspberryPi,
+  FaReact,
+  FaRobot,
+  FaUnity,
+  FaWifi,
+} from "react-icons/fa";
+import {
+  SiArduino,
+  SiBlender,
+  SiPhpmyadmin,
+  SiTypescript,
+} from "react-icons/si";
+import "./About.css";
+import image from "../../assets/JAMCO.png";
+import StaticBackground from "../StaticBackground";
 
 export default function About() {
   const titleRef = useRef<HTMLHeadingElement | null>(null);
@@ -57,14 +85,19 @@ export default function About() {
           style={{ animationDelay: "0.3s" }}
         >
           <div className="centered">
-            <img src={image} alt="Mark Louie Jamco" />
+            <img src={image} alt="Mark Louie Jamco" loading="lazy" />
             <p><strong>Mark Louie Jamco</strong></p>
             <p>Bachelor of Science in Computer Engineering</p>
           </div>
 
           <p>SUMMARY</p>
           <ul>
-            <li>Fresh Computer Engineering graduate, Cum Laude, with foundations in programming, software and web development, and embedded systems. Experienced in C, C++, Python, C#, JavaScript/TypeScript, IoT, robotics, and web apps.</li>
+            <li>
+              Fresh Computer Engineering graduate, Cum Laude, with foundations in
+              programming, software and web development, and embedded systems.
+              Experienced in C, C++, Python, C#, JavaScript/TypeScript, IoT,
+              robotics, and web applications.
+            </li>
           </ul>
 
           <p>ACHIEVEMENTS</p>
@@ -72,7 +105,7 @@ export default function About() {
             <li>Cum Laude (1 of 2 Latin Honors)</li>
             <li>Arduino Programming Graduate</li>
             <li>TESDA NCII Passer</li>
-            <li>2 Consecutive Year Top Student Performer (2nd & 3rd Year)</li>
+            <li>2 Consecutive Year Top Student Performer (2nd and 3rd Year)</li>
           </ul>
         </div>
 
@@ -86,7 +119,7 @@ export default function About() {
           <p>Arduino Programming (Jan 2025 - Jun 2025)</p>
           <ul>
             <li>Developed prototype projects integrating sensors, motors, and components</li>
-            <li>Focused on programming, circuitry, and components integration</li>
+            <li>Focused on programming, circuitry, and component integration</li>
           </ul>
           <p>OJT ICT Technical Staff (Aug 2024 - Oct 2024)</p>
           <ul>
@@ -96,9 +129,9 @@ export default function About() {
           </ul>
           <p>TESDA NCIII Computer Systems Servicing (Jul 2024 - Sep 2024)</p>
           <ul>
-            <li>Basic Competencies – communication, teamwork, professionalism, safety</li>
-            <li>Common Competencies – quality standards, computer operations, technical drawings, electronics handling</li>
-            <li>Core Competencies – installation, networking/server setup, maintenance/repair</li>
+            <li>Basic Competencies - communication, teamwork, professionalism, safety</li>
+            <li>Common Competencies - quality standards, computer operations, technical drawings, electronics handling</li>
+            <li>Core Competencies - installation, networking/server setup, maintenance/repair</li>
           </ul>
         </div>
 
@@ -112,44 +145,44 @@ export default function About() {
 
           <p>Software Development</p>
           <ul className="skills-grid">
-            <li><i className="fa-brands fa-html5"></i> HTML 5</li>
-            <li><i className="fa-brands fa-css3"></i> CSS</li>
-            <li><i className="fa-brands fa-react"></i> React.JS</li>
-            <li><i className="fa-brands fa-bootstrap"></i> Bootstrap</li>
-            <li><i className="fa-brands fa-js"></i> JavaScript</li>
-            <li><i className="fa-solid fa-code"></i>TypeScript</li>
-            <li><i className="fa-brands fa-node"></i> Node</li>
-            <li><i className="fa-solid fa-c"></i> C</li>
-            <li><i className="fa-solid fa-plus"></i> C++</li>
-            <li><i className="fa-brands fa-python"></i> Python</li>
-            <li><i className="fa-brands fa-php"></i> phpMyAdmin</li>
+            <li><FaHtml5 aria-hidden="true" /> HTML 5</li>
+            <li><FaCss3Alt aria-hidden="true" /> CSS</li>
+            <li><FaReact aria-hidden="true" /> React.js</li>
+            <li><FaBootstrap aria-hidden="true" /> Bootstrap</li>
+            <li><FaJs aria-hidden="true" /> JavaScript</li>
+            <li><SiTypescript aria-hidden="true" /> TypeScript</li>
+            <li><FaNodeJs aria-hidden="true" /> Node.js</li>
+            <li><FaCode aria-hidden="true" /> C</li>
+            <li><FaCode aria-hidden="true" /> C++</li>
+            <li><FaPython aria-hidden="true" /> Python</li>
+            <li><SiPhpmyadmin aria-hidden="true" /> phpMyAdmin</li>
           </ul>
 
           <p>Prototyping</p>
           <ul className="skills-grid">
-            <li><i className="fa-brands fa-raspberry-pi"></i> Raspberry Pi</li>
-            <li><i className="fa-solid fa-a"></i> Arduino</li>
-            <li><i className="fa-solid fa-microchip"></i> Integrated Circuits</li>
-            <li><i className="fa-solid fa-robot"></i> Robotics</li>
-            <li><i className="fa-solid fa-wifi"></i> IoT Development</li>
-            <li><i className="fa-solid fa-code-branch"></i> Embedded Systems</li>
+            <li><FaRaspberryPi aria-hidden="true" /> Raspberry Pi</li>
+            <li><SiArduino aria-hidden="true" /> Arduino</li>
+            <li><FaMicrochip aria-hidden="true" /> Integrated Circuits</li>
+            <li><FaRobot aria-hidden="true" /> Robotics</li>
+            <li><FaWifi aria-hidden="true" /> IoT Development</li>
+            <li><FaCodeBranch aria-hidden="true" /> Embedded Systems</li>
           </ul>
 
-          <p>Visualization & 3D Design</p>
+          <p>Visualization and 3D Design</p>
           <ul className="skills-grid">
-            <li><i className="fa-brands fa-figma"></i> Figma</li>
-            <li><i className="fa-solid fa-pen-nib"></i> Canva</li>
-            <li><i className="fa-solid fa-cube"></i> Solidworks</li>
-            <li><i className="fa-solid fa-b"></i> Blender</li>
+            <li><FaFigma aria-hidden="true" /> Figma</li>
+            <li><FaPenNib aria-hidden="true" /> Canva</li>
+            <li><FaCube aria-hidden="true" /> Solidworks</li>
+            <li><SiBlender aria-hidden="true" /> Blender</li>
           </ul>
 
-          <p>Productivity & Standards</p>
+          <p>Productivity and Standards</p>
           <ul className="skills-grid">
-            <li><i className="fa-brands fa-microsoft"></i> Microsoft 365</li>
-            <li><i className="fa-solid fa-infinity"></i> VS Code</li>
-            <li><i className="fa-brands fa-unity"></i> Unity</li>
-            <li><i className="fa-solid fa-atom"></i> Proteus</li>
-            <li><i className="fa-brands fa-github"></i> GitHub</li>
+            <li><FaMicrosoft aria-hidden="true" /> Microsoft 365</li>
+            <li><FaCode aria-hidden="true" /> VS Code</li>
+            <li><FaUnity aria-hidden="true" /> Unity</li>
+            <li><FaAtom aria-hidden="true" /> Proteus</li>
+            <li><FaGithub aria-hidden="true" /> GitHub</li>
           </ul>
         </div>
       </div>

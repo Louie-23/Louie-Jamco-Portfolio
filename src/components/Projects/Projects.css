@@ -38,6 +38,10 @@
   border: 1px solid #2ecc71;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
+  width: 100%;
+  padding: 0;
+  background: #000;
+  text-align: left;
 }
 
 .project-card:hover {
@@ -173,11 +177,31 @@
 .video-controls {
   width: 100%;
   margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .video-progress {
   width: 100%;
   cursor: pointer;
+}
+
+.video-toggle {
+  border: 1px solid #2ecc71;
+  background: transparent;
+  color: #2ecc71;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+}
+
+.empty-media {
+  width: 100%;
+  padding: 3rem 1rem;
+  border: 1px dashed #2ecc71;
+  border-radius: 8px;
+  color: #ccc;
 }
 
 /* ==============================
@@ -247,9 +271,10 @@
   height: 10px;
   background: #666;
   border-radius: 50%;
-  display: inline-block;
   cursor: pointer;
   transition: background 0.3s ease;
+  border: 0;
+  padding: 0;
 }
 
 .dot:hover {
@@ -277,6 +302,17 @@
   font-size: 1rem;
   cursor: pointer;
   border: none;
+}
+
+.project-card:focus-visible,
+.slider-btn:focus-visible,
+.dot:focus-visible,
+.modal-close:focus-visible,
+.video-toggle:focus-visible,
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible {
+  outline: 2px solid #2ecc71;
+  outline-offset: 2px;
 }
 
 .btn-primary {

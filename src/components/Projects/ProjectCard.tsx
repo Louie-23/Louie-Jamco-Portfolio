@@ -20,11 +20,20 @@ export default function ProjectCard({ project, onClick }: Props) {
     <div
       className="project-card relative overflow-hidden"
       onClick={onClick}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          onClick();
+        }
+      }}
       onMouseEnter={() => {
         setIsHovered(true);
         if (!hasVideoLoaded) setIsVideoLoading(true); // only reset before first load
       }}
       onMouseLeave={() => setIsHovered(false)}
+      role="button"
+      tabIndex={0}
+      aria-label={`Open details for ${project.title}`}
     >
       {/* Fallback image */}
       <img

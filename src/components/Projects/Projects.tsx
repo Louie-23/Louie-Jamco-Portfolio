@@ -1,9 +1,9 @@
-import { useRef, useState, useEffect } from "react";
+import { useState } from "react";
 import "./Projects.css";
 import { projects } from "../../data/projectsData";
 import type { Project } from "../../data/projectsData"; 
-import ProjectCard from "./ProjectCard";
 import ProjectModal from "./ProjectModal";
+import AnimatedProjectCard from "./AnimatedProjectCard";
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -14,18 +14,17 @@ export default function Projects() {
 
   const handleNext = (project: Project) => {
     const total = getTotalSlides(project);
+    if (total === 0) return;
     setCurrentIndex((prev) => (prev + 1) % total);
   };
 
   const handlePrev = (project: Project) => {
     const total = getTotalSlides(project);
+    if (total === 0) return;
     setCurrentIndex((prev) => (prev - 1 + total) % total);
   };
 
   const handleDotClick = (index: number) => setCurrentIndex(index);
-
-  // State to track visibility of each card
-  const [visibleCards, setVisibleCards] = useState<number[]>([]);
 
   return (
     <section id="projects" className="projects-section">
@@ -38,44 +37,16 @@ export default function Projects() {
             <div className="projects-grid">
               {projects
                 .filter((p) => p.category === category)
-                .map((project) => {
-                  const cardRef = useRef<HTMLDivElement | null>(null);
-
-                  // Observe each card
-                  useEffect(() => {
-                    const observer = new IntersectionObserver(
-                      ([entry]) => {
-                        if (entry.isIntersecting && !visibleCards.includes(project.id)) {
-                          setVisibleCards((prev) => [...prev, project.id]);
-                          observer.disconnect();
-                        }
-                      },
-                      { threshold: 0.3 }
-                    );
-
-                    if (cardRef.current) observer.observe(cardRef.current);
-
-                    return () => observer.disconnect();
-                  }, [project.id, visibleCards]);
-
-                  return (
-                    <div
-                      key={project.id}
-                      ref={cardRef}
-                      className={`project-card-wrapper slide-up ${
-                        visibleCards.includes(project.id) ? "animate" : ""
-                      }`}
-                    >
-                      <ProjectCard
-                        project={project}
-                        onClick={() => {
-                          setSelectedProject(project);
-                          setCurrentIndex(0);
-                        }}
-                      />
-                    </div>
-                  );
-                })}
+                .map((project) => (
+                  <AnimatedProjectCard
+                    key={project.id}
+                    project={project}
+                    onOpen={() => {
+                      setSelectedProject(project);
+                      setCurrentIndex(0);
+                    }}
+                  />
+                ))}
             </div>
           </div>
         ))}

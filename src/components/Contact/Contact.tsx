@@ -1,16 +1,27 @@
-import { useRef, useState, useEffect } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import emailjs from "emailjs-com";
 import "./Contact.css";
+
+type StatusState = {
+  message: string;
+  type: "success" | "error" | "";
+};
+
+const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 export default function Contact() {
   const form = useRef<HTMLFormElement | null>(null);
   const sectionRef = useRef<HTMLElement | null>(null);
+  const fadeTimeoutRef = useRef<number | null>(null);
+  const clearTimeoutRef = useRef<number | null>(null);
 
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState<StatusState>({ message: "", type: "" });
   const [fadeOut, setFadeOut] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Trigger animations on scroll
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -27,36 +38,56 @@ export default function Contact() {
     return () => observer.disconnect();
   }, []);
 
-  const sendEmail = (e: React.FormEvent) => {
-    e.preventDefault();
+  useEffect(() => {
+    return () => {
+      if (fadeTimeoutRef.current) window.clearTimeout(fadeTimeoutRef.current);
+      if (clearTimeoutRef.current) window.clearTimeout(clearTimeoutRef.current);
+    };
+  }, []);
+
+  const queueStatusReset = () => {
+    if (fadeTimeoutRef.current) window.clearTimeout(fadeTimeoutRef.current);
+    if (clearTimeoutRef.current) window.clearTimeout(clearTimeoutRef.current);
+
+    fadeTimeoutRef.current = window.setTimeout(() => setFadeOut(true), 3000);
+    clearTimeoutRef.current = window.setTimeout(() => {
+      setStatus({ message: "", type: "" });
+      setFadeOut(false);
+    }, 5000);
+  };
+
+  const sendEmail = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     if (!form.current) return;
 
-    emailjs
-      .sendForm(
-        "service_3on8f86",
-        "template_f7wcche",
-        form.current,
-        "hOHKGb98ESRa5HVa6"
-      )
-      .then(
-        () => {
-          setStatus("Message sent successfully!");
-          form.current?.reset();
-          setTimeout(() => setFadeOut(true), 3000);
-          setTimeout(() => {
-            setStatus("");
-            setFadeOut(false);
-          }, 5000);
-        },
-        () => {
-          setStatus("Failed to send message. Try again later.");
-          setTimeout(() => setFadeOut(true), 3000);
-          setTimeout(() => {
-            setStatus("");
-            setFadeOut(false);
-          }, 5000);
-        }
-      );
+    if (!serviceId || !templateId || !publicKey) {
+      setStatus({
+        message: "Contact form is temporarily unavailable. Please use the email link below.",
+        type: "error",
+      });
+      setFadeOut(false);
+      queueStatusReset();
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+      setFadeOut(false);
+
+      await emailjs.sendForm(serviceId, templateId, form.current, publicKey);
+
+      setStatus({ message: "Message sent successfully.", type: "success" });
+      form.current.reset();
+      queueStatusReset();
+    } catch {
+      setStatus({
+        message: "Failed to send message. Please try again later.",
+        type: "error",
+      });
+      queueStatusReset();
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -70,54 +101,55 @@ export default function Contact() {
           CONTACT ME
         </h2>
 
-      {/* Name */}
-      <div
-        className={`field slide-up ${isVisible ? "animate" : ""}`}
-        style={{ animationDelay: "0.3s" }}
-      >
-        <label htmlFor="name">Name</label>
-        <input type="text" name="name" id="name" required />
-      </div>
+        <div
+          className={`field slide-up ${isVisible ? "animate" : ""}`}
+          style={{ animationDelay: "0.3s" }}
+        >
+          <label htmlFor="name">Name</label>
+          <input type="text" name="name" id="name" autoComplete="name" required />
+        </div>
 
-      {/* Email */}
-      <div
-        className={`field slide-up ${isVisible ? "animate" : ""}`}
-        style={{ animationDelay: "0.4s" }}
-      >
-        <label htmlFor="email">Email</label>
-        <input type="email" name="email" id="email" required />
-      </div>
+        <div
+          className={`field slide-up ${isVisible ? "animate" : ""}`}
+          style={{ animationDelay: "0.4s" }}
+        >
+          <label htmlFor="email">Email</label>
+          <input type="email" name="email" id="email" autoComplete="email" required />
+        </div>
 
-      {/* Subject */}
-      <div
-        className={`field slide-up ${isVisible ? "animate" : ""}`}
-        style={{ animationDelay: "0.5s" }}
-      >
-        <label htmlFor="subject">Subject</label>
-        <input type="text" name="subject" id="subject" required />
-      </div>
+        <div
+          className={`field slide-up ${isVisible ? "animate" : ""}`}
+          style={{ animationDelay: "0.5s" }}
+        >
+          <label htmlFor="subject">Subject</label>
+          <input type="text" name="subject" id="subject" required />
+        </div>
 
-      {/* Message */}
-      <div
-        className={`field slide-up ${isVisible ? "animate" : ""}`}
-        style={{ animationDelay: "0.6s" }}
-      >
-        <label htmlFor="message">Message</label>
-        <textarea name="message" id="message" rows={5} required />
-      </div>
+        <div
+          className={`field slide-up ${isVisible ? "animate" : ""}`}
+          style={{ animationDelay: "0.6s" }}
+        >
+          <label htmlFor="message">Message</label>
+          <textarea name="message" id="message" rows={5} required />
+        </div>
 
-      {/* Submit */}
-      <button
-        type="submit"
-        id="button"
-        className={`btn-primary slide-up ${isVisible ? "animate" : ""}`}
-        style={{ animationDelay: "0.7s" }}
-      >
-        Submit
-      </button>
+        <button
+          type="submit"
+          id="button"
+          className={`btn-primary slide-up ${isVisible ? "animate" : ""}`}
+          style={{ animationDelay: "0.7s" }}
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Sending..." : "Submit"}
+        </button>
       </form>
 
-      {status && <p className={`status ${fadeOut ? "fade-out" : ""}`}>{status}</p>}
+      <p
+        className={`status ${status.type} ${fadeOut ? "fade-out" : ""}`}
+        aria-live="polite"
+      >
+        {status.message}
+      </p>
     </section>
   );
 }
