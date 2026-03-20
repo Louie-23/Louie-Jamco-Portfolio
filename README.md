@@ -1,4 +1,4 @@
-# Louie Jamco Portfolio
+# Mark Louie Jamco Portfolio
 
 A personal portfolio website built to showcase my software projects, IoT prototypes, and technical work in one place.
 
